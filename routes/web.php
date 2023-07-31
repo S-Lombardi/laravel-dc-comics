@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+//collego CONTROLLER
+use App\Http\Controllers\ComicController as ComicController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ComicController::class, 'index'])->name('home');
+
+Route::resource('comics', ComicController::class);
