@@ -18,10 +18,7 @@
 <body>
 
     <main class="bg-light">
-        <div class="container">
-            perdio
-
-        </div>
+       @yield('content')
     </main>
 
 </body>
