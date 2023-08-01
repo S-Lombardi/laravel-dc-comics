@@ -5,3 +5,47 @@
     padding:0;
     box-sizing: border-box;
 }
+
+
+header{
+    li{
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 25px;
+    }
+    .logo{
+        width: 70px;
+    }
+}
+
+.footer-top {
+    background-color: #0076e4;
+    color: white;
+    height: 100px;
+    padding: 70px;
+    .footer-icons {
+        width: 80px; //rivedere misure
+        height: 40px
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    li{
+        list-style-type: none;
+    
+    }
+}
+footer {
+   li{
+    list-style-type: none;
+
+    }
+
+    .bottom-footer {
+        background-color: #303030;
+        height: 70px;
+        
+    }
+
+}
