@@ -15,23 +15,23 @@
                     {{-- SERIE --}}
                     <div class="form-group">
                         <label for="" class="control-label">Serie</label>
-                        <input type="text"class="form-control" id="title" name="title" placeholder="Serie">
+                        <input type="text"class="form-control" id="serie" name="serie" placeholder="Serie">
                     </div>
                     {{-- PREZZO --}}
                     <div class="form-group">
                         <label for="" class="control-label">Prezzo</label>
-                        <input type="text" class="form-control"id="title" name="title" placeholder="Prezzo">
+                        <input type="text" class="form-control"id="prezzo" name="prezzo" placeholder="Prezzo">
                     </div>
                     {{-- TIPO --}}
                     <div class="form-group">
                         <label for="" class="control-label">Tipo</label>
-                        <input type="text"class="form-control" id="title" name="title" placeholder="Tipo">
+                        <input type="text"class="form-control" id="tipo" name="tipo" placeholder="Tipo">
+                    </div>
+                    {{-- PULSANTE --}}
+                    <div class="form-group">
+                        <button type="submit"class="form-control" class="btn btn-success">Salva</button>
                     </div>
                 </form>
-            </div>
-            {{-- PULSANTE --}}
-            <div class="form-group">
-                <button type="submit"class="form-control" class="btn btn-success">Salva</button>
             </div>
         </div>
 
