@@ -15,18 +15,24 @@
                     <button class="btn btn-warning">
                         <a class="text-decoration-none text-dark" href="{{route('comics.show', $comic->id)}}"> Scopri di più!</a>
                     </button>
+                    {{-- Pulsante Modifica form --}}
+                    <button class="mb-5 btn btn-lg btn-primary">
+                        <a class="text-light text-decoration-none" href="{{route('comics.edit',$comic->id)}}">
+                            Modifica il fumetto!
+                        </a>
+                    </button>
                 </div>
-
             </div>
             @endforeach
 
-            {{-- Pulsante Form/ Create --}}
         </div>
+        {{-- Pulsante Form/ Create --}}
         <button class="mb-5 btn btn-lg btn-primary">
             <a class="text-light text-decoration-none" href="{{route('comics.create')}}">
-                Passa alla form
+                Aggiungi un fumetto :3 
             </a>
         </button>
+
     </div>
 
 @endsection
