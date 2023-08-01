@@ -33,14 +33,13 @@
                             </a>
                         </button>
                     </div>
-                    {{-- Delate --}}
-                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm">
-                        Elimina
-                    </button>
-
+                    {{-- Form Delate --}}
+                    <form action="{{route('comics.destroy', $comic->id)}}" onsubmit="return confirm('Sei sicuro di voler eliminare questo fumetto?')" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">
+                            Elimina
+                        </button>
                     </form>
                 </div>
             </div>

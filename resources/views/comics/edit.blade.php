@@ -6,6 +6,18 @@
         <h2>Modifica il fumetto che hai scelto!</h2>
         <div class="row">
             <div class="col-12">
+
+                {{-- Messaggi di errore --}}
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach    
+                        </ul>
+                    </div>
+                @endif
+                {{-- INIZIO FORM --}}
                 <form action="{{route('comics.update', $comic->id)}}" method="POST">
                     @csrf
                     @method('PUT')

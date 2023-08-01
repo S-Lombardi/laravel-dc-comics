@@ -6,6 +6,8 @@ use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
 
+use Illuminate\Support\Facades\Validator;
+
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -39,9 +41,9 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        $form_data = $this->validation($request->all());
 
-        $form_data = $request->all();
+        
         $comic = new Comic();
         $comic->title = $form_data['title'];
         $comic->thumb = $form_data['thumb'];
@@ -86,7 +88,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
 
         $comic->update($form_data);
         return redirect()->route('comics.show', ['comic' => $comic->id]);
@@ -102,5 +104,30 @@ class ComicController extends Controller
     {
         $comic->delete();
         return redirect()->route('comics.index');
+    }
+
+    private function validation($data){
+
+        $validator = Validator::make($data,
+
+            [
+                'title'=> 'required|max:255',
+                'type'=> 'max:50',
+                'price'=> 'required|max:10',
+                'series'=> 'max:100',
+            ],
+            [
+                'title.required'=>'Il titolo è obbligatorio',
+                'title.max'=> 'il titolo dele essere lungo al massimo :max caratteri',
+                'type.max' => 'il tipo di fumetto può avere massimo :max caratteri',
+                'price.required' => 'il prezzo è obbligatorio',
+                'price.max' => 'il prezzo può avere masssimo :max caratteri',
+                'series.max' => 'la serie può contenere al massimo :max caratteri',
+            ]
+        
+        
+        )->validate();
+
+        return $validator;
     }
 }
