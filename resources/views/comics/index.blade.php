@@ -33,6 +33,15 @@
                             </a>
                         </button>
                     </div>
+                    {{-- Delate --}}
+                    <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        Elimina
+                    </button>
+
+                    </form>
                 </div>
             </div>
             @endforeach
