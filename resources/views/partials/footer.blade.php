@@ -1,5 +1,5 @@
 <footer>
-    <div class="container-fluid">
+    <div class="container-fluid bg-dark">
         <div class="row">
             <!-- Footer middle- Link -->
             <div class="d-flex flex-column" style="background-image:url({{Vite::asset('/resources/img/footer-bg.jpg')}})">
