@@ -3,6 +3,7 @@
 {{-- FORM --}}
 @section('content')
     <div class="container">
+        <h2>Compila la form per aggiungere il tuo fumetto preferito!</h2>
         <div class="row">
             <div class="col-12">
                 <form action="{{route('comics.store')}}" method="POST">
